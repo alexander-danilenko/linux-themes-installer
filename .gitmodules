@@ -1,0 +1,105 @@
+[submodule "themes/cursors/WhiteSur-Cursors"]
+	path = themes/cursors/WhiteSur-Cursors
+	url = https://github.com/vinceliuice/WhiteSur-cursors.git
+[submodule "themes/icons/Fluent-icon-theme"]
+	path = themes/icons/Fluent-icon-theme
+	url = https://github.com/vinceliuice/Fluent-icon-theme.git
+[submodule "themes/icons/Papirus-icon-theme"]
+	path = themes/icons/Papirus-icon-theme
+	url = https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git
+[submodule "themes/icons/Paper-icon-theme"]
+	path = themes/icons/Paper-icon-theme
+	url = https://github.com/snwh/paper-icon-theme.git
+[submodule "themes/icons/Qogir-icon-theme"]
+	path = themes/icons/Qogir-icon-theme
+	url = https://github.com/vinceliuice/Qogir-icon-theme.git
+[submodule "themes/icons/Tela-icon-theme"]
+	path = themes/icons/Tela-icon-theme
+	url = https://github.com/vinceliuice/Tela-icon-theme.git
+[submodule "themes/icons/Vimix-icon-theme"]
+	path = themes/icons/Vimix-icon-theme
+	url = https://github.com/vinceliuice/vimix-icon-theme.git
+[submodule "themes/icons/WhiteSur-icon-theme"]
+	path = themes/icons/WhiteSur-icon-theme
+	url = https://github.com/vinceliuice/WhiteSur-icon-theme.git
+[submodule "themes/icons/Mac-OS-X-Lion-icon-theme"]
+	path = themes/icons/Mac-OS-X-Lion-icon-theme
+	url = https://github.com/B00merang-Artwork/Mac-OS-X-Lion.git
+[submodule "themes/icons/McMojave-circle-icon-theme"]
+	path = themes/icons/McMojave-circle-icon-theme
+	url = https://github.com/vinceliuice/McMojave-circle.git
+[submodule "themes/icons/Mac-OS-X-Cheetah-icon-theme"]
+	path = themes/icons/Mac-OS-X-Cheetah-icon-theme
+	url = https://github.com/B00merang-Artwork/Mac-OS-X-Cheetah.git
+[submodule "themes/icons/Windows-XP-icon-theme"]
+	path = themes/icons/Windows-XP-icon-theme
+	url = https://github.com/B00merang-Artwork/Windows-XP.git
+[submodule "themes/icons/Windows-Longhorn-icon-theme"]
+	path = themes/icons/Windows-Longhorn-icon-theme
+	url = https://github.com/B00merang-Artwork/Windows-Longhorn.git
+[submodule "themes/icons/Windows-7-icon-theme"]
+	path = themes/icons/Windows-7-icon-theme
+	url = https://github.com/B00merang-Artwork/Windows-7.git
+[submodule "themes/icons/Windows-8-icon-theme"]
+	path = themes/icons/Windows-8-icon-theme
+	url = https://github.com/B00merang-Artwork/Windows-8.git
+[submodule "themes/icons/Windows-10-icon-theme"]
+	path = themes/icons/Windows-10-icon-theme
+	url = https://github.com/B00merang-Artwork/Windows-10.git
+[submodule "themes/icons/Windows-10-Dark-icon-theme"]
+	path = themes/icons/Windows-10-Dark-icon-theme
+	url = https://github.com/B00merang-Artwork/Windows-10-Dark.git
+[submodule "themes/gtk/ChromeOS-gtk-theme"]
+	path = themes/gtk/ChromeOS-gtk-theme
+	url = https://github.com/vinceliuice/ChromeOS-theme.git
+[submodule "themes/gtk/Fluent-gtk-theme"]
+	path = themes/gtk/Fluent-gtk-theme
+	url = https://github.com/vinceliuice/Fluent-gtk-theme.git
+[submodule "themes/gtk/Matcha-gtk-theme"]
+	path = themes/gtk/Matcha-gtk-theme
+	url = https://github.com/vinceliuice/Matcha-gtk-theme.git
+[submodule "themes/gtk/Materia-gtk-theme"]
+	path = themes/gtk/Materia-gtk-theme
+	url = https://github.com/nana-4/materia-theme.git
+[submodule "themes/gtk/Orchis-gtk-theme"]
+	path = themes/gtk/Orchis-gtk-theme
+	url = https://github.com/vinceliuice/Orchis-theme.git
+[submodule "themes/gtk/Qogir-gtk-theme"]
+	path = themes/gtk/Qogir-gtk-theme
+	url = https://github.com/vinceliuice/Qogir-theme.git
+[submodule "themes/gtk/Stylish-gtk-theme"]
+	path = themes/gtk/Stylish-gtk-theme
+	url = https://github.com/vinceliuice/stylish-gtk-theme.git
+[submodule "themes/gtk/Mojave-gtk-theme"]
+	path = themes/gtk/Mojave-gtk-theme
+	url = https://github.com/vinceliuice/Mojave-gtk-theme.git
+[submodule "themes/gtk/Sierra-gtk-theme"]
+	path = themes/gtk/Sierra-gtk-theme
+	url = https://github.com/vinceliuice/Sierra-gtk-theme.git
+[submodule "themes/gtk/WhiteSur-gtk-theme"]
+	path = themes/gtk/WhiteSur-gtk-theme
+	url = https://github.com/vinceliuice/WhiteSur-gtk-theme.git
+[submodule "themes/gtk/Redmond-gtk-themes"]
+	path = themes/gtk/Redmond-gtk-themes
+	url = https://github.com/B00merang-Project/Redmond-Themes.git
+[submodule "themes/gtk/Windows-XP-gtk-theme"]
+	path = themes/gtk/Windows-XP-gtk-theme
+	url = https://github.com/B00merang-Project/Windows-XP.git
+[submodule "themes/gtk/Windows-7-gtk-theme"]
+	path = themes/gtk/Windows-7-gtk-theme
+	url = https://github.com/B00merang-Project/Windows-7.git
+[submodule "themes/gtk/Windows-Vista-gtk-theme"]
+	path = themes/gtk/Windows-Vista-gtk-theme
+	url = https://github.com/B00merang-Project/Windows-Vista.git
+[submodule "themes/gtk/Windows-10-gtk-theme"]
+	path = themes/gtk/Windows-10-gtk-theme
+	url = https://github.com/B00merang-Project/Windows-10.git
+[submodule "themes/kde/ChromeOS-kde-theme"]
+	path = themes/kde/ChromeOS-kde-theme
+	url = https://github.com/vinceliuice/ChromeOS-kde.git
+[submodule "themes/kde/Qogir-kde-theme"]
+	path = themes/kde/Qogir-kde-theme
+	url = https://github.com/vinceliuice/Qogir-kde.git
+[submodule "themes/kde/WhiteSur-kde-theme"]
+	path = themes/kde/WhiteSur-kde-theme
+	url = https://github.com/vinceliuice/WhiteSur-kde.git
