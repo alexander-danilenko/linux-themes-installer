@@ -1,3 +1,91 @@
 #!/usr/bin/env bash
 
+###> Helper functions.
+BLACK=`tput setaf 0;`
+RED=`tput setaf 1;`
+GREEN=`tput setaf 2;`
+YELLOW=`tput setaf 3;`
+BLUE=`tput setaf 4;`
+MAGENTA=`tput setaf 5;`
+CYAN=`tput setaf 6;`
+LIGHTGREY=`tput setaf 7;`
+RESET=`tput sgr0`
+###< Helper functions.
+
+MISSING_PREREQUISITES=()
+[ ! -x "$(command -v meson)" ] && MISSING_PREREQUISITES+=("meson")
+[ ! -x "$(command -v make)" ] && MISSING_PREREQUISITES+=("make")
+[ ! -x "$(command -v sassc)" ] && MISSING_PREREQUISITES+=("sassc")
+
+# If missing prerequisites is not empty.
+if (( ${#MISSING_PREREQUISITES[@]} )); then
+  echo "${RED}[ERROR]${RESET} Following packages are missing in your system: ${YELLOW}${MISSING_PREREQUISITES[*]}${RESET}"
+  echo "${RED}Aborting...${RESET}"
+  exit 1
+fi
+
 git submodule update --init --remote --force ./themes/*/*
+
+repoDir=$(pwd)
+repoCursorsDir="$repoDir/themes/cursors"
+repoGtkDir="$repoDir/themes/gtk"
+repoIconsDir="$repoDir/themes/icons"
+repoKdeDir="$repoDir/themes/kde"
+
+targetPrefix="$HOME/.local"
+targetCursorsDir="$targetPrefix/share/icons"
+targetGtkDir="$targetPrefix/share/themes"
+targetIconsDir="$targetPrefix/share/icons"
+
+installCursorThemes() {
+  cd "$repoCursorsDir/WhiteSur-Cursors" && cp -fr ./dist/ $targetCursorsDir/WhiteSur-cursors
+}
+
+installGtkThemes() {
+  cd "$repoGtkDir/ChromeOS-gtk-theme" && ./install.sh -d $targetGtkDir
+  cd "$repoGtkDir/Fluent-gtk-theme" && ./install.sh -d $targetGtkDir
+  cd "$repoGtkDir/Matcha-gtk-theme" && ./install.sh -d $targetGtkDir
+  cd "$repoGtkDir/Materia-gtk-theme" && rm -rf ./_build && meson _build -Dprefix="$targetPrefix" >/dev/null && meson install -C _build >/dev/null
+  cd "$repoGtkDir/Mojave-gtk-theme" && ./install.sh -d $targetGtkDir --icon gnome
+  cd "$repoGtkDir/Orchis-gtk-theme" && ./install.sh -d $targetGtkDir
+  cd "$repoGtkDir/Qogir-gtk-theme" && ./install.sh -d $targetGtkDir --logo gnome
+  cd "$repoGtkDir/Redmond-gtk-themes" && cp -r ./Windows* $targetGtkDir
+  cd "$repoGtkDir/Sierra-gtk-theme" && ./install.sh -d $targetGtkDir --noapple
+  cd "$repoGtkDir/Stylish-gtk-theme" && ./Install -d $targetGtkDir --logo gnome
+  cd "$repoGtkDir/WhiteSur-gtk-theme" && ./install.sh -d $targetGtkDir --icon gnome --theme all
+  cd "$repoGtkDir/Windows-7-gtk-theme" && cp -fr ./ $targetGtkDir/Windows-7
+  cd "$repoGtkDir/Windows-10-gtk-theme" && cp -fr ./ $targetGtkDir/Windows-10
+  cd "$repoGtkDir/Windows-Vista-gtk-theme" && cp -fr ./ $targetGtkDir/Windows-Vista
+  cd "$repoGtkDir/Windows-XP-gtk-theme" && cp -r ./Windows* $targetGtkDir
+}
+
+installIconThemes() {
+  cd "$repoIconsDir/Fluent-icon-theme" && ./install.sh -d $targetIconsDir
+  cd "$repoIconsDir/Mac-OS-X-Cheetah-icon-theme" && cp -fr ./ $targetIconsDir/Mac-OS-X-Cheetah
+  cd "$repoIconsDir/Mac-OS-X-Lion-icon-theme" && cp -fr ./ $targetIconsDir/Mac-OS-X-Lion
+  cd "$repoIconsDir/McMojave-circle-icon-theme" && ./install.sh -d $targetIconsDir --all
+  cd "$repoIconsDir/Paper-icon-theme" && cp -fr ./Paper* $targetIconsDir
+  cd "$repoIconsDir/Papirus-icon-theme" && PREFIX=$targetPrefix make install
+  cd "$repoIconsDir/Qogir-icon-theme" && ./install.sh -d $targetIconsDir
+  cd "$repoIconsDir/Tela-icon-theme" && ./install.sh -d $targetIconsDir
+  cd "$repoIconsDir/Vimix-icon-theme" && ./install.sh -d $targetIconsDir -a
+  cd "$repoIconsDir/WhiteSur-icon-theme" && ./install.sh -d $targetIconsDir
+  cd "$repoIconsDir/Windows-7-icon-theme" && cp -fr ./ $targetIconsDir/Windows-7
+  cd "$repoIconsDir/Windows-8-icon-theme" && cp -fr ./ $targetIconsDir/Windows-8
+  cd "$repoIconsDir/Windows-10-Dark-icon-theme" && cp -fr ./ $targetIconsDir/Windows-10-Dark
+  cd "$repoIconsDir/Windows-10-icon-theme" && cp -fr ./ $targetIconsDir/Windows-10
+  cd "$repoIconsDir/Windows-Longhorn-icon-theme" && cp -fr ./ $targetIconsDir/Windows-Longhorn
+  cd "$repoIconsDir/Windows-XP-icon-theme" && cp -fr ./ $targetIconsDir/Windows-XP
+}
+
+installKdeThemes() {
+  cd "$repoKdeDir/ChromeOS-kde-theme" && ./install.sh
+  cd "$repoKdeDir/Qogir-kde-theme" && ./install.sh
+  cd "$repoKdeDir/WhiteSur-kde-theme" && ./install.sh
+}
+
+######## Do install. ###########################################################
+installCursorThemes
+installGtkThemes
+installIconThemes
+# installKdeThemes
