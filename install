@@ -45,13 +45,13 @@ installGtkThemes() {
   cd "$repoGtkDir/ChromeOS-gtk-theme" && ./install.sh -d $targetGtkDir
   cd "$repoGtkDir/Fluent-gtk-theme" && ./install.sh -d $targetGtkDir
   cd "$repoGtkDir/Matcha-gtk-theme" && ./install.sh -d $targetGtkDir
-  cd "$repoGtkDir/Materia-gtk-theme" && rm -rf ./_build && meson _build -Dprefix="$targetPrefix" >/dev/null && meson install -C _build >/dev/null
+  cd "$repoGtkDir/Materia-gtk-theme" && meson _build -Dprefix="$targetPrefix" >/dev/null && meson install -C _build >/dev/null
   cd "$repoGtkDir/Mojave-gtk-theme" && ./install.sh -d $targetGtkDir --icon gnome
   cd "$repoGtkDir/Orchis-gtk-theme" && ./install.sh -d $targetGtkDir
   cd "$repoGtkDir/Qogir-gtk-theme" && ./install.sh -d $targetGtkDir --logo gnome
   cd "$repoGtkDir/Redmond-gtk-themes" && cp -r ./Windows* $targetGtkDir
-  cd "$repoGtkDir/Sierra-gtk-theme" && ./install.sh -d $targetGtkDir --noapple
-  cd "$repoGtkDir/Stylish-gtk-theme" && ./Install -d $targetGtkDir --logo gnome
+  cd "$repoGtkDir/Sierra-gtk-theme" && ./install.sh -d $targetGtkDir -na
+  cd "$repoGtkDir/Stylish-gtk-theme" && ./Install -d $targetGtkDir
   cd "$repoGtkDir/WhiteSur-gtk-theme" && ./install.sh -d $targetGtkDir --icon gnome --theme all
   cd "$repoGtkDir/Windows-7-gtk-theme" && cp -fr ./ $targetGtkDir/Windows-7
   cd "$repoGtkDir/Windows-10-gtk-theme" && cp -fr ./ $targetGtkDir/Windows-10
@@ -85,6 +85,10 @@ installKdeThemes() {
 }
 
 ######## Do install. ###########################################################
+
+# Show execiting command
+set -x
+
 installCursorThemes
 installGtkThemes
 installIconThemes
